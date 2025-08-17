@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "MetaSafe",
+  "description": "Automatically strips metadata from files before uploading.",
+  "version": "0.1.0",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_icon": {
+      "16": "assets/placeholdericon128.png",
+      "48": "assets/placeholdericon128.png",
+      "128": "assets/placeholdericon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/placeholdericon128.png",
+    "48": "assets/placeholdericon128.png",
+    "128": "assets/placeholdericon128.png"
+  }
+}
