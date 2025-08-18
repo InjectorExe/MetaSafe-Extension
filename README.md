@@ -8,23 +8,22 @@
 ## 🔒 Why?
 Most files (images, videos, documents, PDFs, audio) contain hidden metadata (EXIF, GPS location, device info, author, software version, etc.) that can leak personal details when uploading to websites.
 
-MetaSafe automatically strips this metadata **on-the-fly**, protecting your privacy.
+MetaSafe automatically strips this metadata on-the-fly before the website receives the original file containing the metadata, protecting your privacy.
 
 ---
 
 ## ✨ Features
-- Automatic metadata removal when uploading files.
+- Automatic metadata removal when uploading files via `<input type="file">` or using **drag-and-drop**.
 - Support for [common filetypes](#-supported-filetypes).
 - Works across all Chromium-based browsers (Chrome, Edge, Brave, Vivaldi, Opera).
-- Local processing — nothing leaves your device.
 
 ---
 
 ## 📂 Supported Filetypes
-At this stage, no filetypes are supported yet.
+- 📷 **Images**: JPG/JPEG (EXIF data removal)
 
 The following are planned for progressive rollout:
-- 📷 Images: JPG, PNG
+- 📷 Images: PNG
 - 📄 Documents: PDF, DOCX
 - 🎵 Audio: MP3
 - 🎥 Video: MP4
@@ -34,13 +33,11 @@ More formats will be added in upcoming releases — check the [Roadmap](#-roadma
 ---
 
 ## 🛠️ Roadmap
-- **Initial commit**: project scaffold (`manifest.json`, basic folder structure, minimal README).
-- **v0.1.0**: ability to detect and intercept file uploads (no metadata removal yet).
-- **v0.2.0**: implement metadata removal for images (EXIF cleaner).
-- **v0.3.0**: extend to documents (PDF, DOCX).
-- **v0.4.0**: extend to media files (MP3, MP4).
-- **v0.5.0**: optional whitelist system (choose websites where the extension is disabled).
-- **v1.0.0**: polished, stable → submit to Chrome Web Store.
+- **v0.1.0**: **(Current)** Core interception logic for file inputs and drag-and-drop. EXIF metadata removal for JPEG images.
+- **v0.2.0**: Extend to documents (PDF, DOCX).
+- **v0.3.0**: Extend to media files (MP3, MP4).
+- **v0.4.0**: Add a user-friendly options page with a whitelist system (choose websites where the extension is disabled).
+- **v1.0.0**: Polished, stable → submit to Chrome Web Store.
 
 ---
 
@@ -56,7 +53,6 @@ More formats will be added in upcoming releases — check the [Roadmap](#-roadma
 👉 Coming soon…
 
 ---
-
 
 ## 🧑‍💻 Development Setup
 Clone the repo locally:
